@@ -1,0 +1,7 @@
+# ignore ALL files in below directory
+
+bin/
+obj/
+.vs/
+packages/
+Properties/
