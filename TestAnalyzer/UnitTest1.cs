@@ -12,7 +12,8 @@ namespace TestAnalyzer
         [DataRow("I am in Happy Mood", "Happy")]
         [DataRow("I am in any Mood", "unknown")]
         [DataRow(null, "Object reference not set to an instance of an object.")]
-        [DataRow("", "String is Empty")]
+        [DataRow(null, "Empty Mood")]
+        [DataRow(" ", "Empty Mood")]
         public void TestMethod1(string msg,string expected)
         {
             //Arrange

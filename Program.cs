@@ -12,6 +12,7 @@ namespace MoodAnalyzer
         {
             Analyze obj = new Analyze(null);
             Console.WriteLine(obj.Analyzemood());
+            Console.ReadLine();
         }
     }
 }

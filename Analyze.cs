@@ -17,23 +17,26 @@ namespace MoodAnalyzer
         {
             try
             {
+                if (str == null)
+                    throw new CustomException("Empty Mood");
+                
                 if (str.Contains("Sad") && !str.Contains("Happy"))
                     return "Sad";
                 else if (str.Contains("Happy") && !str.Contains("Sad"))
                     return "Happy";
                 else if (str.Contains("Happy") && (str.Contains("Sad")))
                     return "Neutral";
-                else if (str.Length < 1)
-                    return "String is Empty";
-                else if (!str.Contains("Happy") && !(str.Contains("Sad")))
+                else if (str==" ")
+                    throw new CustomException("Empty Mood");
+                else if (!(str.Contains("Happy")) && !(str.Contains("Sad")))
                     return "unknown";
                 else
-                    throw new Exception("wrong input");
+                    return "Can't determined";
 
             }
             
-            catch(Exception Ex)
-            {
+            catch(CustomException Ex)
+            { 
                 return Ex.Message;
             }
             
