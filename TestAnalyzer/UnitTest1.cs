@@ -23,5 +23,20 @@ namespace TestAnalyzer
             //Act
             Assert.AreEqual(expected, actual);
         }
+        
+        [TestCategory("Reflection - Create Obj using Non Parameterized Constructor")]
+        [TestMethod]
+        [DataRow("MoodAnalyzer.Analyze", "Analyze")]
+
+        public void TestMethod2(string className, string ConstructorName)
+        {
+            //Arrange
+            object expectedobj = new Analyze();
+            //Assert
+            object actualobj = MoodAnalyserFactory.CreateAnalyzer(className,ConstructorName);
+            //Act
+            expectedobj.Equals(actualobj);
+        }
+        
     }
 }
